@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function Home() {
   return (
-    <View>
+    <View styles={styles.conteiner}>
       <Text>Home </Text>
     </View>
   );
