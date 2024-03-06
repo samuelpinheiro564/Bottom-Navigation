@@ -4,7 +4,7 @@ import styles from "./styles";
 
 const Title = () => {
   return (
-    <View style={styles.conteiner}>
+    <View style={styles.container}>
       <Text>Title</Text>
     </View>
   );
