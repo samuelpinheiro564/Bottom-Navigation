@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { StatusBar } from "expo-status-bar";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import React from "react";
+
+import Home from "./src/screens/Home";
+import Contact from "./src/screens/Contact";
+import Profile from "./src/screens/Profile";
 
 export default function App() {
+  const Tab = createBottomTabNavigator;
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="home" color="blue" size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Contato"
+        component={Contact}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="Contact" color="Black" size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={Profile}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="Perfil" color="Red" size={26} />
+          ),
+        }}
+      />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
