@@ -8,7 +8,7 @@ import Home from "./src/screens/Home";
 import Contact from "./src/screens/Contact";
 import Profile from "./src/screens/Profile";
 
-export default function App() {
+function App() {
   const Tab = createBottomTabNavigator;
   return (
     <NavigationContainer>
@@ -43,3 +43,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
+export default App;
